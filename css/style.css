@@ -84,6 +84,19 @@
     opacity: 0.8;
 }
 
+/* Header Styling */
+header {
+    position: fixed; /* Keeps the header fixed at the top */
+    top: 0; /* Positions the header at the very top */
+    left: 0; /* Aligns the header to the left edge */
+    width: 100%; /* Ensures the header spans the full width of the viewport */
+    background-color: #2e2e1f; /* Dark background color */
+    color: white; /* Text color */
+    padding: 10px 0; /* Adds vertical padding */
+    z-index: 1000; /* Ensures the header stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+}
+
 
 nav {
     background-color: #2e2e1f; 
@@ -97,6 +110,7 @@ nav a {
     text-decoration: none;
     margin: 0 10px;
     padding: 10px 10px;
+    transition: background-color 0.3s ease;
 }
 
 nav a:hover {
@@ -333,30 +347,36 @@ h2 {
 
 
             .container {
-                width: 80%;
+                width: 100%;
                 max-width: 1200px;
-                margin: 40px auto;
+                margin: 20px auto;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 background-color: white;
                 padding: 40px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                gap: 20px;
             }
     
             .left-content {
                 flex: 1;
                 padding-right: 40px;
+                text-align: left;
             }
     
             .right-content {
                 flex: 1;
                 text-align: right;
+                
+               
             }
     
             .right-content img {
-                max-width: 60%;
-                height: 60%;
+                max-width: 300px;
+                height: 70%;
+
+                
             }
     
             h2 {
@@ -386,7 +406,7 @@ h2 {
             }
     
             li::before {
-                content: '✓';
+                content: '\2705';
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -405,7 +425,7 @@ h2 {
                 height: 12px;
                 border-radius: 50%;
                 background-color: #ddd;
-                margin: 0 5px;
+                margin: 0 10px;
                 cursor: pointer;
             }
     
@@ -456,7 +476,7 @@ h2 {
             .stat-box span {
                 font-size: 1.5em; /* Adjust size as needed */
                 font-weight: bold;
-                margin-top: 10px;
+                margin-top: 20px;
             }
     
             .stat-box p {
@@ -629,7 +649,7 @@ h2 {
                 }
                 
                 .left-content, .right-content {
-                    padding-right: 0;
+                    padding-right: 10px;
                     text-align: center;
                 }
                 
@@ -648,3 +668,304 @@ h2 {
                 }
             }
 
+
+  /* Team Section */
+  .team-section {
+    width: 100%;
+    height: 60vh;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    flex-wrap: wrap;
+    background-color: rgb(164, 164, 164);
+    gap: 20px;
+  }
+  
+  .team-heading {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #6c5ce7;
+    padding-bottom: 10px;
+  }
+  
+  .team-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 60px;
+    gap: 20px;
+    
+  }
+  
+  .team-member {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 1400px;
+    color: white;
+  }
+
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+  }
+  
+  .member-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .member-role {
+    color: #00bcd4;
+    margin-bottom: 10px;
+  }
+  
+  .member-description {
+    color: #44187a;
+    font-size: 0.85em;
+    line-height: 1.4;
+  }
+  
+  @media (max-width: 768px) {
+    .team-container {
+        flex-direction: column; /* Stack members vertically on smaller screens */
+        align-items: center; /* Center-align the members */
+    }
+
+    .team-member {
+        width: 100%; /* Make each member take up the full width */
+        max-width: 1400px; /* Limit the maximum width */
+        margin-bottom: 20px; /* Add spacing between members */
+    }
+}
+
+/* Recent News Section */
+.news-section {
+    width: 100%;
+    padding: 20px 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .news-heading {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    padding: 40px;
+  }
+  
+  .news-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+   
+  }
+  
+  .news-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .news-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .news-image {
+    width: 50%;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .news-content {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .news-content h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .news-content p {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+  }
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f7ff; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .image-container {
+    margin-bottom: 20px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .social-icon {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 50%;
+    background-color: #6c5ce7; /* Darker blue for icons */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .social-icon:hover {
+    background-color: #5b4fae; /* Slightly darker on hover */
+  }
+  
+  .social-icon {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 50%;
+    background-color: #6c5ce7; /* Darker blue for icons */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .social-icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: white;
+  }
+
+  /* Team Section */
+.team-section {
+    width: 100%; /* Full width */
+    padding: 20px 20px; /* Padding for spacing */
+    background-color: #333; /* Dark background */
+    color: white; /* Text color */
+    text-align: center; /* Center-align text */
+}
+
+.team-heading {
+    font-size: 2.5em; /* Large heading font size */
+    margin-bottom: 30px; /* Space below the heading */
+    border-bottom: 2px solid #6c5ce7; /* Accent underline */
+    padding: 60px;
+    color: white; /* Heading text color */
+}
+
+.team-container {
+    display: flex; /* Flex container for team members */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center team members horizontally */
+    gap: 40px; /* Space between team members */
+}
+
+.team-member {
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent dark background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Internal padding */
+    text-align: center; /* Center-align content */
+    width: 300px; /* Fixed width for each member */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+
+.member-image-container {
+    width: 100%; /* Ensure the image container spans the full width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+.member-image {
+    width: 1400px; 
+    height: 100px;
+    object-fit: cover; /* Ensure the image covers the space */
+    margin: 0 auto; /* Center the image */
+    transition: border-color 0.3s ease; /* Smooth border color change */
+}
+
+
+
+.member-details {
+    margin-top: 20px; /* Space above the details */
+}
+
+.member-name {
+    font-size: 1.2em; /* Member name font size */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 20px; /* Space below the name */
+    color: white; /* Name text color */
+}
+
+.member-role {
+    font-size: 0.9em; /* Role font size */
+    color: #00bcd4; /* Teal role color */
+    margin-bottom: 20px; /* Space below the role */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column; /* Stack members vertically on smaller screens */
+        align-items: center; /* Center-align members */
+    }
+
+    .team-member {
+        width: 100%; /* Full width for each member */
+        max-width: 300px; /* Limit maximum width */
+        margin-bottom: 20px; /* Space between members */
+    }
+}
